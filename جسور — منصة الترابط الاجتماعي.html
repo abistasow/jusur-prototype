@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0f5f55">
+<meta name="description" content="جسور — منصة الترابط الاجتماعي: تحليل ذكي، أنشطة محلية، جسر الأجيال، ولوحة أسرية.">
+<title>جسور — منصة الترابط الاجتماعي</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌉</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--teal:#1a8a7d;--teal-d:#0f5f55;--teal-l:#4db8a8;--gold:#c9a961;--gold-l:#e0c78a;--bg:#f4f7f7;--card:#fff;--text:#16293a;--muted:#62737f;--line:#e8eef0;--ok:#2ecc71;--shadow:0 2px 12px rgba(15,50,60,.07)}
+@media(prefers-color-scheme:dark){:root{--bg:#0e1a1d;--card:#16262a;--text:#e8f1f1;--muted:#93a7ad;--line:#243a3f;--shadow:0 2px 12px rgba(0,0,0,.35)}}
+html,body{height:100%}
+body{font-family:'Tajawal',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-tap-highlight-color:transparent}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.stage{min-height:100%;display:flex;justify-content:center;align-items:center;background:var(--bg)}
+.phone{width:100%;height:100dvh;display:flex}
+.screen{flex:1;display:flex;flex-direction:column;position:relative;overflow:hidden;background:var(--bg);padding-top:env(safe-area-inset-top)}
+@media(min-width:600px){
+ .stage{padding:24px;background:linear-gradient(135deg,#0f5f55,#1a8a7d)}
+ .phone{width:390px;height:820px;background:#000;border-radius:46px;padding:11px;box-shadow:0 30px 80px rgba(0,0,0,.45)}
+ .screen{border-radius:36px;padding-top:0}
+}
+.header{background:linear-gradient(135deg,var(--teal-d),var(--teal));color:#fff;padding:18px 20px 22px;border-radius:0 0 28px 28px;flex-shrink:0}
+.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.brand{display:flex;align-items:center;gap:8px;font-weight:900;font-size:19px}
+.brand svg{width:30px;height:30px}
+.avatar{width:40px;height:40px;border-radius:50%;background:var(--gold);color:#fff;font-weight:700;display:grid;place-items:center}
+.hello{font-size:13px;opacity:.85}.uname{font-size:20px;font-weight:700}
+.sci{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.22);border-radius:18px;padding:14px;margin-top:14px}
+.sci small{font-size:12px;opacity:.9}
+.sci .row{display:flex;justify-content:space-between;align-items:center}
+.sci b{font-size:38px;font-weight:900}.sci b i{font-size:17px;font-style:normal;opacity:.8}
+.chip{background:rgba(46,204,113,.3);padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700}
+.bar{height:8px;background:var(--line);border-radius:4px;overflow:hidden}
+.sci .bar{background:rgba(255,255,255,.22);margin-top:8px}
+.fill{height:100%;width:0;border-radius:4px;background:linear-gradient(90deg,var(--gold-l),var(--gold));transition:width 1s ease}
+.content{flex:1;overflow-y:auto;padding:18px 18px 100px;scrollbar-width:none;animation:in .3s}
+.content::-webkit-scrollbar{display:none}
+@keyframes in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+h2{font-size:16px;font-weight:700;margin:18px 0 10px;display:flex;align-items:center;gap:8px}
+h2:first-child{margin-top:0}
+h2 span{width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,var(--teal),var(--teal-l));display:grid;place-items:center;font-size:14px}
+.card{background:var(--card);border-radius:16px;padding:14px;box-shadow:var(--shadow);margin-bottom:10px}
+.insight{background:linear-gradient(135deg,#fff5e6,#fef9f0);border:1px solid var(--gold-l);color:#3a3020}
+@media(prefers-color-scheme:dark){.insight{background:#2a2518;border-color:#5d4f2a;color:#eadfc4}}
+.insight b{color:var(--teal-d)}@media(prefers-color-scheme:dark){.insight b{color:var(--gold-l)}}
+.insight p{font-size:13px;color:inherit;opacity:.85}
+.act{display:flex;gap:12px;align-items:center;width:100%;text-align:right;transition:transform .15s}
+.act:active{transform:scale(.98)}
+.ico{width:50px;height:50px;border-radius:14px;display:grid;place-items:center;font-size:24px;flex-shrink:0}
+.c1{background:#d8f1ec}.c2{background:#fbe9c6}.c3{background:#e6dbff}
+.info{flex:1;min-width:0}.t{font-size:14px;font-weight:700}.m{font-size:12px;color:var(--muted)}
+.badge{display:inline-block;font-size:11px;padding:2px 9px;border-radius:10px;font-weight:700;background:#d8f1ec;color:var(--teal-d);margin-top:4px}
+.badge.on{background:var(--teal);color:#fff}
+.cta{background:linear-gradient(135deg,var(--teal-d),var(--teal));color:#fff;border-radius:20px;padding:18px;margin:14px 0}
+.cta p{font-size:13px;opacity:.92;margin:6px 0 12px}
+.btn{background:var(--gold);color:#103c36;padding:10px 20px;border-radius:12px;font-weight:700;font-size:13px}
+.btn.sm{background:var(--teal);color:#fff;padding:7px 14px;font-size:12px;border-radius:10px}
+.btn.done{background:var(--line);color:var(--muted)}
+.btn.block{display:block;width:100%;padding:13px;font-size:14px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:6px}
+.stat{background:var(--card);border-radius:16px;padding:14px;text-align:center;box-shadow:var(--shadow)}
+.stat b{display:block;font-size:26px;font-weight:900;color:var(--teal)}.stat small{font-size:11px;color:var(--muted)}
+.av{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:700;flex-shrink:0}
+.mem .bar{margin-top:6px}.mem .fill{background:var(--c)}
+.tog{display:flex;justify-content:space-between;align-items:center;gap:10px;width:100%;text-align:right}
+.sw{width:48px;height:28px;border-radius:14px;background:#c9d3d6;position:relative;flex-shrink:0;transition:.25s}
+.sw::after{content:'';position:absolute;top:3px;right:3px;width:22px;height:22px;border-radius:50%;background:#fff;transition:.25s;box-shadow:0 1px 3px rgba(0,0,0,.25)}
+[aria-pressed=true] .sw{background:var(--teal)}[aria-pressed=true] .sw::after{transform:translateX(-20px)}
+.arch{display:grid;gap:8px}
+.node{width:100%;text-align:center;padding:12px;border-radius:14px;background:var(--card);box-shadow:var(--shadow);border:1px solid var(--line);font-weight:700;font-size:13px}
+.node small{display:block;font-weight:400;color:var(--muted);font-size:11px}
+.arrow{text-align:center;color:var(--teal);font-size:18px;line-height:1}
+.row3{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+nav{position:absolute;bottom:0;left:0;right:0;background:var(--card);border-top:1px solid var(--line);display:flex;justify-content:space-around;padding:6px 4px calc(8px + env(safe-area-inset-bottom))}
+nav button{display:flex;flex-direction:column;align-items:center;gap:2px;font-size:10.5px;color:var(--muted);padding:4px 6px;border-radius:12px;flex:1}
+nav button span{width:38px;height:34px;border-radius:12px;display:grid;place-items:center;font-size:18px;transition:.2s}
+nav button[aria-current=page]{color:var(--teal);font-weight:700}
+nav button[aria-current=page] span{background:linear-gradient(135deg,var(--teal),var(--teal-l))}
+.back{position:absolute;inset:0;background:rgba(0,0,0,.45);opacity:0;pointer-events:none;transition:.25s;z-index:20}
+.back.show{opacity:1;pointer-events:auto}
+.sheet{position:absolute;left:0;right:0;bottom:0;background:var(--card);border-radius:26px 26px 0 0;padding:20px 20px calc(20px + env(safe-area-inset-bottom));transform:translateY(105%);transition:transform .3s;z-index:21}
+.sheet.show{transform:none}
+.sheet h3{font-size:18px;margin:4px 0}.sheet p{color:var(--muted);font-size:13px;margin-bottom:14px}
+.toast{position:absolute;bottom:96px;left:50%;transform:translate(-50%,20px);background:#10302c;color:#fff;padding:10px 18px;border-radius:24px;font-size:13px;opacity:0;pointer-events:none;transition:.3s;z-index:30;white-space:nowrap}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.link{color:var(--teal);font-weight:700;text-decoration:underline}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="stage"><div class="phone"><div class="screen" id="app">
+  <div id="head"></div>
+  <main class="content" id="view" tabindex="-1"></main>
+  <nav id="nav" aria-label="التنقل الرئيسي"></nav>
+  <div class="back" id="back"></div>
+  <div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sh-t"></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</div></div></div>
+
+<script>
+(function(){
+'use strict';
+var KEY='jusoor-v2';
+var fa=function(n){try{return Number(n).toLocaleString('ar-SA',{useGrouping:false})}catch(e){return n}};
+var ACTS=[
+ {id:'stories',i:'📖',c:'c1',t:'جلسة تبادل القصص',p:'المركز الثقافي — حي النرجس',h:'٧:٠٠ م',b:'مقترح لك',d:'جلسة حوارية يتشارك فيها الجيران قصصهم وتجاربهم في أجواء ودية.'},
+ {id:'coffee',i:'☕',c:'c2',t:'مجموعة قهوة الصباح',p:'مقهى الحي — النرجس',h:'٩:٠٠ ص',b:'٥ مشاركين',d:'لقاء صباحي أسبوعي خفيف للتعارف وبناء صداقات جديدة في الحي.'},
+ {id:'calli',i:'🎨',c:'c3',t:'ورشة الخط العربي',p:'جمعية الثقافة والفنون',h:'٥:٣٠ م',b:'مجاني',d:'ورشة تعليمية لأساسيات الخط العربي، مناسبة لجميع الأعمار.'}];
+var ELD=[
+ {id:'e1',n:'أم محمد — ٦٥ سنة',need:'تحتاج مساعدة في تطبيق «صحتي»',l:'أ',bg:'#c9a961'},
+ {id:'e2',n:'أبو عبدالله — ٧٢ سنة',need:'يرغب في تعلم مكالمات الفيديو',l:'ع',bg:'#1a8a7d'},
+ {id:'e3',n:'أم نورة — ٦٨ سنة',need:'تريد تعلم التسوق الإلكتروني',l:'ن',bg:'#8e44ad'}];
+var FAM=[{n:'أحمد (أنت)',v:null,c:'#1a8a7d',l:'أ'},{n:'سارة (١٦ سنة)',v:78,c:'#c9a961',l:'س'},{n:'أم محمد (٦٥ سنة)',v:82,c:'#8e44ad',l:'م'}];
+var TOGS={meal:['أوقات العائلة','إسكات الإشعارات أثناء الوجبات',1],weekly:['تقرير أسبوعي','ملخص مؤشر الترابط كل يوم أحد',1],elder:['وضع كبار السن','واجهة مبسطة وخطوط كبيرة',0],priv:['الخصوصية أولاً','بياناتك مشفرة ومحمية بنظام حماية البيانات الشخصية (م/١٩)',1],smart:['الإشعارات الذكية','تنبيهات عند اكتشاف عزلة',1]};
+var NAV=[['home','🏠','الرئيسية'],['bridge','🌉','الجسر'],['family','👨‍👩‍👧‍👦','الأسرة'],['profile','👤','حسابي'],['about','🧩','المنصة']];
+var def=function(){return{page:'home',sci:65,pts:48,ses:12,joined:[],helped:[],tog:{meal:1,weekly:1,elder:0,priv:1,smart:1}}};
+var S=def();
+try{var raw=localStorage.getItem(KEY);if(raw)S=Object.assign(def(),JSON.parse(raw))}catch(e){}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}}
+var $=function(id){return document.getElementById(id)};
+var LOGO='<svg viewBox="0 0 100 100" fill="none" aria-hidden="true"><circle cx="50" cy="50" r="35" stroke="#c9a961" stroke-width="8"/><circle cx="50" cy="50" r="20" stroke="#fff" stroke-width="6"/><path d="M50 15v20" stroke="#c9a961" stroke-width="8" stroke-linecap="round"/></svg>';
+
+function header(){
+ var p=S.page,x='';
+ if(p==='home')x='<div class="hello">صباح الخير 🌿</div><div class="uname">أحمد العتيبي</div><div class="sci"><small>مؤشر الترابط الاجتماعي (SCI)</small><div class="row"><b>'+fa(S.sci)+'<i>%</i></b><span class="chip">▲ +١٢٪ هذا الشهر</span></div><div class="bar" role="progressbar" aria-valuenow="'+S.sci+'" aria-valuemin="0" aria-valuemax="100"><div class="fill" data-w="'+S.sci+'"></div></div></div>';
+ var sub={bridge:'اربط خبرتك بشغف الجيل الجديد',family:'مؤشر الترابط للأسرة: ٧٢٪',profile:'أحمد العتيبي — الرياض',about:'كيف تعمل المنصة'}[p];
+ var ttl={home:'جسور',bridge:'🌉 جسر الأجيال',family:'👨‍👩‍👧‍👦 لوحة الأسرة',profile:'👤 الملف الشخصي',about:'🧩 هيكل المنصة'}[p];
+ $('head').innerHTML='<header class="header"><div class="top"><div class="brand">'+(p==='home'?LOGO+'جسور':ttl)+'</div><button class="avatar" data-go="profile" aria-label="الملف الشخصي">أ</button></div>'+(sub?'<div class="hello">'+sub+'</div>':'')+x+'</header>';
+}
+function actCard(a){var j=S.joined.indexOf(a.id)>-1;
+ return '<button class="card act" data-act="'+a.id+'"><div class="ico '+a.c+'">'+a.i+'</div><div class="info"><div class="t">'+a.t+'</div><div class="m">📍 '+a.p+' · ⏰ '+a.h+'</div><span class="badge'+(j?' on':'')+'">'+(j?'✓ مسجّل':a.b)+'</span></div></button>'}
+function tog(k){var t=TOGS[k];return '<div class="card"><button class="tog" data-tog="'+k+'" role="switch" aria-checked="'+!!S.tog[k]+'" aria-pressed="'+!!S.tog[k]+'"><div><div class="t">'+t[0]+'</div><div class="m">'+t[1]+'</div></div><span class="sw"></span></button></div>'}
+
+var PAGES={
+home:function(){return '<div class="card insight"><b>✨ تحليل ذكي</b><p>لاحظنا أنك قضيت <b>٣ ساعات</b> في التصفح السلبي اليوم، وجودة تفاعلك الرقمي <b>أقل</b> من الأسبوع الماضي. نقترح عليك نشاطاً واقعياً قريباً منك.</p></div><h2><span>📍</span>أنشطة قريبة منك</h2>'+ACTS.map(actCard).join('')+'<div class="cta"><div class="t">🌉 جسر الأجيال</div><p>هل تعلم أن ٧٠٪ من كبار السن في حيك يرغبون في تعلم التقنية؟ انضم لبرنامج «علّم واستفد» واكسب نقاطاً تطوعية.</p><button class="btn" data-go="bridge">اكتشف الفرص ←</button></div>'},
+bridge:function(){return '<div class="grid"><div class="stat"><b>'+fa(S.ses)+'</b><small>جلسة مكتملة</small></div><div class="stat"><b>'+fa(S.pts)+'</b><small>نقطة تطوعية</small></div></div><h2><span>👥</span>كبار السن القريبون منك</h2>'+ELD.map(function(e){var d=S.helped.indexOf(e.id)>-1;return '<div class="card act"><div class="av" style="background:'+e.bg+'">'+e.l+'</div><div class="info"><div class="t">'+e.n+'</div><div class="m">'+e.need+'</div></div><button class="btn sm'+(d?' done':'')+'" data-help="'+e.id+'"'+(d?' disabled':'')+'>'+(d?'✓ تمّت':'مساعدة')+'</button></div>'}).join('')+'<h2><span>🎁</span>مكافآت التطوع</h2><div class="card act"><div class="ico c2">🏆</div><div class="info"><div class="t">شارة «الجسر الذهبي»</div><div class="m">أكمل '+fa(Math.max(0,20-S.ses))+' جلسة للحصول عليها</div><div class="bar" style="margin-top:6px"><div class="fill" data-w="'+Math.min(100,S.ses*5)+'"></div></div></div></div><div class="card act"><div class="ico c1">📜</div><div class="info"><div class="t">شهادة تطوع معتمدة</div><div class="m">قابلة للإضافة في ملفك المدرسي</div></div></div>'},
+family:function(){return '<h2><span>📊</span>أفراد الأسرة</h2>'+FAM.map(function(m){var v=m.v==null?S.sci:m.v;return '<div class="card act mem" style="--c:'+m.c+'"><div class="av" style="background:'+m.c+'">'+m.l+'</div><div class="info"><div class="t">'+m.n+'</div><div class="bar"><div class="fill" data-w="'+v+'"></div></div></div><b style="color:'+m.c+'">'+fa(v)+'٪</b></div>'}).join('')+'<h2><span>⚙️</span>إعدادات الأسرة</h2>'+['meal','weekly','elder'].map(tog).join('')+'<h2><span>📈</span>تقدم الأسرة</h2><div class="card insight"><b>تحسن ملحوظ 🌟</b><p>زادت جلسات الحوار الأسري الحقيقية بنسبة <b>٤٠٪</b> خلال الشهر الماضي. استمروا!</p></div>'},
+profile:function(){return '<div class="grid"><div class="stat"><b>'+fa(S.sci)+'٪</b><small>مؤشر الترابط</small></div><div class="stat"><b>'+fa(24+S.joined.length)+'</b><small>نشاط محلي</small></div><div class="stat"><b>'+fa(S.ses)+'</b><small>جلسة جسر</small></div><div class="stat"><b>'+fa(S.pts)+'</b><small>نقطة تطوعية</small></div></div><h2><span>🏅</span>إنجازاتك</h2><div class="card act"><div class="ico c2">🥇</div><div class="info"><div class="t">سفير رقمي — المستوى الثاني</div><div class="m">ساعدت '+fa(S.ses)+' من كبار السن</div></div></div><div class="card act"><div class="ico c1">🌱</div><div class="info"><div class="t">بذرة الترابط</div><div class="m">حضرت '+fa(10+S.joined.length)+' أنشطة مجتمعية</div></div></div><h2><span>⚙️</span>الإعدادات</h2>'+['priv','smart'].map(tog).join('')+'<button class="btn block" style="background:var(--line);color:var(--text);margin-top:14px" data-reset>↺ إعادة ضبط العرض التجريبي</button>'},
+about:function(){function n(g,t,s){return '<button class="node" data-go="'+g+'">'+t+'<small>'+s+'</small></button>'}
+ return '<p class="m" style="margin-bottom:12px">تعمل جسور في ثلاث طبقات: فهم السلوك، ثم اقتراح الفعل المناسب، ثم تحويله إلى ترابط حقيقي. اضغط على أي مكوّن للانتقال إليه.</p><div class="arch"><div class="row3">'+n('home','محرك التحليل الذكي','يرصد جودة التفاعل')+n('home','نظام التوصية المحلي','أنشطة قريبة منك')+n('bridge','جسر الأجيال','تواصل بين الأجيال')+'</div><div class="arrow">▼</div><div class="row3">'+n('profile','مؤشر الترابط الاجتماعي','SCI')+n('bridge','برامج الشمول الرقمي','علّم واستفد')+n('family','لوحة التحكم الأسرية','متابعة وإعدادات')+'</div></div><div class="card" style="margin-top:16px"><div class="t">عن المشروع</div><p class="m">نموذج أولي تفاعلي يعمل بالكامل في المتصفح، وتُحفظ تفاعلاتك محلياً على جهازك فقط. <a class="link" href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub ↗</a></p></div>'}
+};
+
+function render(){
+ header();
+ var v=$('view');v.innerHTML=PAGES[S.page]();v.scrollTop=0;
+ $('nav').innerHTML=NAV.map(function(n){return '<button data-go="'+n[0]+'"'+(n[0]===S.page?' aria-current="page"':'')+'><span>'+n[1]+'</span>'+n[2]+'</button>'}).join('');
+ requestAnimationFrame(function(){requestAnimationFrame(function(){document.querySelectorAll('.fill[data-w]').forEach(function(b){b.style.width=b.dataset.w+'%'})})});
+}
+function go(p){S.page=p;save();render()}
+var tt;function toast(m){var t=$('toast');t.textContent=m;t.classList.add('show');clearTimeout(tt);tt=setTimeout(function(){t.classList.remove('show')},2200)}
+var lastFocus;
+function openSheet(a){lastFocus=document.activeElement;var j=S.joined.indexOf(a.id)>-1;
+ $('sheet').innerHTML='<div style="display:flex;gap:12px;align-items:center"><div class="ico '+a.c+'">'+a.i+'</div><div><h3 id="sh-t">'+a.t+'</h3><div class="m">📍 '+a.p+' · ⏰ '+a.h+'</div></div></div><p style="margin-top:12px">'+a.d+'</p><button class="btn block" data-join="'+a.id+'">'+(j?'إلغاء التسجيل':'سجّل حضوري')+'</button><button class="btn block" style="background:none;color:var(--muted)" data-close>إغلاق</button>';
+ $('back').classList.add('show');$('sheet').classList.add('show');$('sheet').querySelector('[data-join]').focus()}
+function closeSheet(){$('back').classList.remove('show');$('sheet').classList.remove('show');if(lastFocus)lastFocus.focus()}
+function bump(k,d,max){S[k]=Math.max(0,Math.min(max||9999,S[k]+d))}
+
+document.addEventListener('click',function(e){
+ var el=e.target.closest('[data-go],[data-act],[data-join],[data-help],[data-tog],[data-close],[data-reset]');
+ if(e.target===$('back')){closeSheet();return}
+ if(!el)return;var d=el.dataset;
+ if(d.go!==undefined){go(d.go)}
+ else if(d.act){openSheet(ACTS.filter(function(a){return a.id===d.act})[0])}
+ else if(d.join){var i=S.joined.indexOf(d.join);if(i<0){S.joined.push(d.join);bump('sci',3,100);toast('تم التسجيل ✓ (+٣ على مؤشر الترابط)')}else{S.joined.splice(i,1);bump('sci',-3,100);toast('تم إلغاء التسجيل')}save();closeSheet();render()}
+ else if(d.help){if(S.helped.indexOf(d.help)<0){S.helped.push(d.help);bump('pts',4);bump('ses',1);bump('sci',2,100);save();render();toast('شكراً لك! +٤ نقاط تطوعية 🌟')}}
+ else if(d.tog){S.tog[d.tog]=S.tog[d.tog]?0:1;save();el.setAttribute('aria-pressed',!!S.tog[d.tog]);el.setAttribute('aria-checked',!!S.tog[d.tog]);if(d.tog==='elder')document.documentElement.style.fontSize=S.tog.elder?'118%':'';toast(S.tog[d.tog]?'تم التفعيل':'تم الإيقاف')}
+ else if(d.close!==undefined){closeSheet()}
+ else if(d.reset!==undefined){S=def();save();document.documentElement.style.fontSize='';render();toast('تمت إعادة الضبط')}
+});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeSheet()});
+if(S.tog.elder)document.documentElement.style.fontSize='118%';
+render();
+})();
+</script>
+</body>
+</html>
